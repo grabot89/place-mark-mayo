@@ -1,41 +1,47 @@
 import { PlacemarkSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
-export const placemarkController = {
+export const categoryController = {
   index: {
     handler: async function (request, h) {
       const category = await db.categoryStore.getCategoryById(request.params.id);
-      const placemark = await db.placemarkStore.getPlacemarkById(request.params.placemarkid);
       const viewData = {
-        title: "Edit Placemark",
+        title: "Category",
         category: category,
-        placemark: placemark,
       };
-      return h.view("placemark-view", viewData);
+      return h.view("category-view", viewData);
     },
   },
 
-  update: {
+  addPlacemark: {
     validate: {
       payload: PlacemarkSpec,
       options: { abortEarly: false },
       failAction: function (request, h, error) {
-        return h.view("placemark-view", { title: "Edit placemark error", errors: error.details }).takeover().code(400);
+        return h.view("category-view", { title: "Add placemark error", errors: error.details }).takeover().code(400);
       },
     },
     handler: async function (request, h) {
-      const placemark = await db.placemarkStore.getPlacemarkById(request.params.placemarkid);
+      const category = await db.categoryStore.getCategoryById(request.params.id);
       const newPlacemark = {
         name: request.payload.name,
         category: request.payload.category,
-        description: Number(request.payload.description),
+        description: request.payload.description,
         image: request.payload.image,
         latitude: Number(request.payload.latitude),
         longitude: Number(request.payload.longitude),
         temperature: Number(request.payload.temperature),
       };
-      await db.placemarkStore.updatePlacemark(placemark, newPlacemark);
-      return h.redirect(`/category/${request.params.id}`);
+      await db.placemarkStore.addPlacemark(category._id, newPlacemark);
+      return h.redirect(`/category/${category._id}`);
+    },
+  },
+
+  deletePlacemark: {
+    handler: async function (request, h) {
+      const category = await db.categoryStore.getCategoryById(request.params.id);
+      await db.placemarkStore.deletePlacemark(request.params.placemarkid);
+      return h.redirect(`/category/${category._id}`);
     },
   },
 };

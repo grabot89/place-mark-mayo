@@ -24,23 +24,43 @@ export const placemarkService = {
     return res.data;
   },
 
-  async createPlacemark(placemark) {
-    const res = await axios.post(`${this.placemarkUrl}/api/placemarks`, placemark);
+  async createCategory(category) {
+    const res = await axios.post(`${this.placemarkUrl}/api/categories`, category);
     return res.data;
   },
 
-  async deleteAllPlacemarks() {
-    const response = await axios.delete(`${this.placemarkUrl}/api/placemarks`);
+  async deleteAllCategories() {
+    const response = await axios.delete(`${this.placemarkUrl}/api/categories`);
     return response.data;
   },
 
-  async deletePlacemark(id) {
-    const response = await axios.delete(`${this.placemarkUrl}/api/placemarks/${id}`);
+  async deleteCategory(id) {
+    const response = await axios.delete(`${this.placemarkUrl}/api/categories/${id}`);
     return response;
+  },
+
+  async getAllCategories() {
+    const res = await axios.get(`${this.placemarkUrl}/api/categories`);
+    return res.data;
+  },
+
+  async getCategory(id) {
+    const res = await axios.get(`${this.placemarkUrl}/api/categories/${id}`);
+    return res.data;
   },
 
   async getAllPlacemarks() {
     const res = await axios.get(`${this.placemarkUrl}/api/placemarks`);
+    return res.data;
+  },
+
+  async createPlacemark(id, placemark) {
+    const res = await axios.post(`${this.placemarkUrl}/api/placemarks/${id}/placemarks`, placemark);
+    return res.data;
+  },
+
+  async deleteAllPlacemarks() {
+    const res = await axios.delete(`${this.placemarkUrl}/api/placemarks`);
     return res.data;
   },
 
@@ -49,28 +69,8 @@ export const placemarkService = {
     return res.data;
   },
 
-  async getAllTracks() {
-    const res = await axios.get(`${this.placemarkUrl}/api/tracks`);
-    return res.data;
-  },
-
-  async createTrack(id, track) {
-    const res = await axios.post(`${this.placemarkUrl}/api/placemarks/${id}/tracks`, track);
-    return res.data;
-  },
-
-  async deleteAllTracks() {
-    const res = await axios.delete(`${this.placemarkUrl}/api/tracks`);
-    return res.data;
-  },
-
-  async getTrack(id) {
-    const res = await axios.get(`${this.placemarkUrl}/api/tracks/${id}`);
-    return res.data;
-  },
-
-  async deleteTrack(id) {
-    const res = await axios.delete(`${this.placemarkUrl}/api/tracks/${id}`);
+  async deletePlacemark(id) {
+    const res = await axios.delete(`${this.placemarkUrl}/api/placemarks/${id}`);
     return res.data;
   },
 };

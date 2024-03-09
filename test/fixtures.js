@@ -43,15 +43,15 @@ export const beethoven = {
   title: "Mozart Favourites"
 };
 
-export const testPlaylists = [
+export const testCategories = [
   {
-    title: "Beethoven Sonatas"
+    title: "Churches"
   },
   {
-    title: "Beethoven Concertos"
+    title: "Beaches"
   },
   {
-    title: "Beethoven Symphonies"
+    title: "Museums"
   }
 ];
 
