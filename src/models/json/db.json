@@ -5,57 +5,62 @@
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "ef4be94b-beea-4960-a32b-6e5088ac03db"
+      "_id": "f86ee1b4-5589-49f5-987e-01cc3d652f9d"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "ef934fe3-71df-44a1-8c49-8a31998120e8"
+      "_id": "eb4df95c-3349-4692-a48f-031ba66af60b"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "7c8c5c98-2203-41cf-9848-b28a58ce1ae9"
-    },
-    {
-      "firstName": "Grainne",
-      "lastName": "Moran",
-      "email": "homer@simpson.com",
-      "password": "margeSimpson",
-      "_id": "05556f77-d563-4a37-9393-9bf3cec6084a"
+      "_id": "6ba74d1d-909c-4eab-81ad-5c0abf24253a"
     }
   ],
-  "playlists": [
+  "categories": [
     {
-      "title": "Mozart Favourites",
-      "_id": "c61a37a3-fc2c-4635-95cd-4acde57de84f"
+      "title": "Beaches",
+      "_id": "99a36748-adac-40ba-887d-ff3bc74453fc"
     }
   ],
-  "tracks": [
+  "placemarks": [
     {
-      "title": "Piano Sonata No. 3",
-      "artist": "Beethoven",
-      "duration": 5,
-      "_id": "5d9cebe0-afbd-4fc8-90a0-f3900bf1a013",
-      "playlistid": "c61a37a3-fc2c-4635-95cd-4acde57de84f"
+      "name": "Keel",
+      "category": "Beaches",
+      "description": "Beach on Achill",
+      "image": "N/A",
+      "Latitude": 53.97230361690282,
+      "Longitude": -10.073538005639282,
+      "temperature": 10,
+      "_id": "b2be317b-62fe-4e86-a0d5-d01db8dc1c6b",
+      "categoryid": "99a36748-adac-40ba-887d-ff3bc74453fc"
     },
     {
-      "title": "Piano Sonata No. 7",
-      "artist": "Beethoven",
-      "duration": 6,
-      "_id": "1f776a68-a8dd-4103-8c6c-4dcddeb37f57",
-      "playlistid": "c61a37a3-fc2c-4635-95cd-4acde57de84f"
+      "name": "Silver Strand",
+      "category": "Beaches",
+      "description": "Beach near Louisburgh",
+      "image": "N/A",
+      "Latitude": 53.650577869684575,
+      "Longitude": -9.880188098504338,
+      "temperature": 13,
+      "_id": "ebdb5cb0-e7a7-4bb8-a255-e5ef168885b6",
+      "categoryid": "99a36748-adac-40ba-887d-ff3bc74453fc"
     },
     {
-      "title": "Piano Sonata No. 10",
-      "artist": "Beethoven",
-      "duration": 4,
-      "_id": "47faa1cf-fc71-411f-a8b0-212fc638fc49",
-      "playlistid": "c61a37a3-fc2c-4635-95cd-4acde57de84f"
+      "name": "Old Head",
+      "category": "Beaches",
+      "description": "Beach near Killsallagh",
+      "image": "N/A",
+      "Latitude": 53.77693196561296,
+      "Longitude": -9.770128386137225,
+      "temperature": 14,
+      "_id": "faaae789-e66e-4afc-a78f-c38d441cc558",
+      "categoryid": "99a36748-adac-40ba-887d-ff3bc74453fc"
     }
   ]
 }

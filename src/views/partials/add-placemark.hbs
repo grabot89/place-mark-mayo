@@ -1,0 +1,29 @@
+<form class="box" action="/category/{{category._id}}/addplacemark" method="POST">
+  <label>Enter Placemark Details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Name" name="name">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Category" name="category">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter description" name="description">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter image" name="image">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter latitude" name="latitude">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter longitude" name="longitude">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter temperature" name="temperature">
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Add Placemark</button>
+</form>

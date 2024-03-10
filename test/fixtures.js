@@ -28,47 +28,62 @@ export const testUsers = [
   }
 ];
 
-export const mozart = {
-  title: "Mozart Favourites"
+export const museums = {
+  title: "Museums"
 };
 
-export const concerto = {
-  "title": "Violin Concerto No. 3",
-  "artist": "Mozart",
-  "duration": 15
+export const museum = {
+  "name": "Country Life Museum",
+  "category": "Museums",
+  "description": "Museum of country life",
+  "image": "N/A",
+  "latitude": 53.88399130187888,
+  "longitude": -9.207886178948524,
+  "temperature": 11,
 };
 
-
-export const beethoven = {
-  title: "Mozart Favourites"
+export const beaches = {
+  title: "Beaches"
 };
 
-export const testPlaylists = [
+export const testCategories = [
   {
-    title: "Beethoven Sonatas"
+    title: "Churches"
   },
   {
-    title: "Beethoven Concertos"
+    title: "Beaches"
   },
   {
-    title: "Beethoven Symphonies"
+    title: "Museums"
   }
 ];
 
-export const testTracks = [
+export const testPlacemarks = [
   {
-    "title": "Piano Sonata No. 3",
-    "artist": "Beethoven",
-    "duration": 5
+    "name": "Keel",
+    "category": "Beaches",
+    "description": "Beach on Achill",
+    "image": "N/A",
+    "latitude": 53.97230361690282,
+    "longitude": -10.073538005639282,
+    "temperature": 10,
   },
   {
-    "title": "Piano Sonata No. 7",
-    "artist": "Beethoven",
-    "duration": 6
+    "name": "Silver Strand",
+    "category": "Beaches",
+    "description": "Beach near Louisburgh",
+    "image": "N/A",
+    "latitude": 53.650577869684575,
+    "longitude": -9.880188098504338,
+    "temperature": 13,
   },
   {
-    "title": "Piano Sonata No. 10",
-    "artist": "Beethoven",
-    "duration": 4
+    "name": "Old Head",
+    "category": "Beaches",
+    "description": "Beach near Killsallagh",
+    "image": "N/A",
+    "latitude": 53.77693196561296,
+    "longitude": -9.770128386137225,
+    "temperature": 14,
   }
 ];

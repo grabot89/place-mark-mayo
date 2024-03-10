@@ -1,6 +1,6 @@
 import Boom from "@hapi/boom";
-import { PlacemarkSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+import { PlacemarkSpec, CategorySpec } from "../models/joi-schemas.js";
 
 export const placemarkApi = {
   find: {
@@ -34,12 +34,23 @@ export const placemarkApi = {
     auth: false,
     handler: async function (request, h) {
       try {
-        const placemark = request.payload;
-        const newPlacemark = await db.placemarkStore.addPlacemark(placemark);
-        if (newPlacemark) {
-          return h.response(newPlacemark).code(201);
+        const placemark = await db.placemarkStore.addPlacemark(request.params.id, request.payload);
+        if (placemark) {
+          return h.response(placemark).code(201);
         }
         return Boom.badImplementation("error creating placemark");
+      } catch (err) {
+        return Boom.serverUnavailable("Database Error");
+      }
+    },
+  },
+
+  deleteAll: {
+    auth: false,
+    handler: async function (request, h) {
+      try {
+        await db.placemarkStore.deleteAllPlacemarks();
+        return h.response().code(204);
       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }
@@ -54,22 +65,10 @@ export const placemarkApi = {
         if (!placemark) {
           return Boom.notFound("No Placemark with this id");
         }
-        await db.placemarkStore.deletePlacemarkById(placemark._id);
+        await db.placemarkStore.deletePlacemark(placemark._id);
         return h.response().code(204);
       } catch (err) {
         return Boom.serverUnavailable("No Placemark with this id");
-      }
-    },
-  },
-
-  deleteAll: {
-    auth: false,
-    handler: async function (request, h) {
-      try {
-        await db.placemarkStore.deleteAllPlacemarks();
-        return h.response().code(204);
-      } catch (err) {
-        return Boom.serverUnavailable("Database Error");
       }
     },
   },
