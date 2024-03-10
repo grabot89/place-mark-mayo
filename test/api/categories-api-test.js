@@ -2,8 +2,9 @@ import { EventEmitter } from "events";
 import { assert } from "chai";
 import { placemarkService } from "./placemark-service.js";
 import { assertSubset } from "../test-utils.js";
+import { db } from "../../src/models/db.js";
 
-import { maggie, mozart, testCategories } from "../fixtures.js";
+import { maggie, museums, testCategories } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
@@ -11,23 +12,23 @@ suite("Category API tests", () => {
   let user = null;
 
   setup(async () => {
-    db.init("json");
+    db.init("mongo");
     await placemarkService.deleteAllCategories();
     await placemarkService.deleteAllUsers();
     user = await placemarkService.createUser(maggie);
-    mozart.userid = user._id;
+    museums.userid = user._id;
   });
 
   teardown(async () => {});
 
   test("create category", async () => {
-    const returnedCategory = await placemarkService.createCategory(mozart);
+    const returnedCategory = await placemarkService.createCategory(museums);
     assert.isNotNull(returnedCategory);
-    assertSubset(mozart, returnedCategory);
+    assertSubset(museums, returnedCategory);
   });
 
   test("delete a category", async () => {
-    const category = await placemarkService.createCategory(mozart);
+    const category = await placemarkService.createCategory(museums);
     const response = await placemarkService.deleteCategory(category._id);
     assert.equal(response.status, 204);
     try {
@@ -51,7 +52,7 @@ suite("Category API tests", () => {
     assert.equal(returnedCategories.length, 0);
   });
 
-  test("remove non-existant category", async () => {
+  test("remove non-existent category", async () => {
     try {
       const response = await placemarkService.deleteCategory("not an id");
       assert.fail("Should not return a response");

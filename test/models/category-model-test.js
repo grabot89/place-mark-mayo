@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import { db } from "../../src/models/db.js";
-import { testCategories, mozart } from "../fixtures.js";
+import { testCategories, museums } from "../fixtures.js";
 import { assertSubset } from "../test-utils.js";
 
 suite("Category Model tests", () => {
@@ -15,8 +15,8 @@ suite("Category Model tests", () => {
   });
 
   test("create a category", async () => {
-    const category = await db.categoryStore.addCategory(mozart);
-    assertSubset(mozart, category);
+    const category = await db.categoryStore.addCategory(museums);
+    assertSubset(museums, category);
     assert.isDefined(category._id);
   });
 
@@ -29,9 +29,9 @@ suite("Category Model tests", () => {
   });
 
   test("get a category - success", async () => {
-    const category = await db.categoryStore.addCategory(mozart);
+    const category = await db.categoryStore.addCategory(museums);
     const returnedCategory = await db.categoryStore.getCategoryById(category._id);
-    assertSubset(mozart, category);
+    assertSubset(museums, category);
   });
 
   test("delete One Playist - success", async () => {

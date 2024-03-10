@@ -1,38 +1,66 @@
 {
   "users": [
     {
-      "firstName": "Peter",
-      "lastName": "Griffin",
-      "email": "peter@griffin.com",
-      "password": "peterGriffin2024",
-      "_id": "29b13498-f0ab-4c7e-8169-9dfa2da01cdb"
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "_id": "f86ee1b4-5589-49f5-987e-01cc3d652f9d"
     },
     {
-      "firstName": "Peter",
-      "lastName": "Griffin",
-      "email": "peter@griffin.com",
-      "password": "peterGriffin2024",
-      "_id": "76db2592-25a3-4cf3-9c00-edf32fa7362a"
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "eb4df95c-3349-4692-a48f-031ba66af60b"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "6ba74d1d-909c-4eab-81ad-5c0abf24253a"
     }
   ],
   "categories": [
     {
-      "userid": "29b13498-f0ab-4c7e-8169-9dfa2da01cdb",
-      "title": "Churches",
-      "_id": "964c490a-d3a5-4d84-b988-5cad92da811b"
+      "title": "Beaches",
+      "_id": "99a36748-adac-40ba-887d-ff3bc74453fc"
     }
   ],
   "placemarks": [
     {
-      "name": "Ballintuber Abbey",
-      "category": "Churches",
-      "description": "Abbey in Mayo",
+      "name": "Keel",
+      "category": "Beaches",
+      "description": "Beach on Achill",
       "image": "N/A",
-      "latitude": 53.75679936252337,
-      "longitude": -9.282798715718906,
-      "temperature": 12,
-      "_id": "b9bd28ea-cf93-401c-8042-4ddd50653c84",
-      "categoryid": "964c490a-d3a5-4d84-b988-5cad92da811b"
+      "Latitude": 53.97230361690282,
+      "Longitude": -10.073538005639282,
+      "temperature": 10,
+      "_id": "b2be317b-62fe-4e86-a0d5-d01db8dc1c6b",
+      "categoryid": "99a36748-adac-40ba-887d-ff3bc74453fc"
+    },
+    {
+      "name": "Silver Strand",
+      "category": "Beaches",
+      "description": "Beach near Louisburgh",
+      "image": "N/A",
+      "Latitude": 53.650577869684575,
+      "Longitude": -9.880188098504338,
+      "temperature": 13,
+      "_id": "ebdb5cb0-e7a7-4bb8-a255-e5ef168885b6",
+      "categoryid": "99a36748-adac-40ba-887d-ff3bc74453fc"
+    },
+    {
+      "name": "Old Head",
+      "category": "Beaches",
+      "description": "Beach near Killsallagh",
+      "image": "N/A",
+      "Latitude": 53.77693196561296,
+      "Longitude": -9.770128386137225,
+      "temperature": 14,
+      "_id": "faaae789-e66e-4afc-a78f-c38d441cc558",
+      "categoryid": "99a36748-adac-40ba-887d-ff3bc74453fc"
     }
   ]
 }

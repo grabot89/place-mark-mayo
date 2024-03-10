@@ -16,10 +16,10 @@ export const PlacemarkSpec = {
   name: Joi.string().required(),
   category: Joi.string().required(),
   description: Joi.string().required(),
-  image: Joi.string().required(),
-  longitude: Joi.number().allow("").optional(),
-  latitude: Joi.number().allow("").optional(),
-  temperature: Joi.number().allow("").optional(),
+  image: Joi.string().optional(),
+  latitude: Joi.number().max(54.36227016318675).min(53.46618549741208).required(),
+  longitude: Joi.number().max(-8.572080410440332).min(-10.275894721548646).required(),
+  temperature: Joi.number().allow("").max(50).optional(),
 };
 
 export const CategorySpec = {
