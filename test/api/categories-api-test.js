@@ -4,7 +4,7 @@ import { placemarkService } from "./placemark-service.js";
 import { assertSubset } from "../test-utils.js";
 import { db } from "../../src/models/db.js";
 
-import { maggie, museums, testCategories } from "../fixtures.js";
+import { maggie, maggieCredentials, museums, testCategories } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
@@ -12,10 +12,14 @@ suite("Category API tests", () => {
   let user = null;
 
   setup(async () => {
-    db.init("mongo");
+    db.init("json");
+    placemarkService.clearAuth();
+    user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     await placemarkService.deleteAllCategories();
     await placemarkService.deleteAllUsers();
     user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     museums.userid = user._id;
   });
 

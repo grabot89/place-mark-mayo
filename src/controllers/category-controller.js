@@ -32,8 +32,6 @@ export const categoryController = {
         longitude: Number(request.payload.longitude),
         temperature: Number(request.payload.temperature),
       };
-      console.log("New Placemark", newPlacemark);
-      console.log("New Category", category);
       await db.placemarkStore.addPlacemark(category._id, newPlacemark);
       return h.redirect(`/category/${category._id}`);
     },

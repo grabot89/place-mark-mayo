@@ -5,27 +5,28 @@
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "f86ee1b4-5589-49f5-987e-01cc3d652f9d"
+      "_id": "23d0a84e-92fe-474f-b929-b2ece5c2ffe4"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "eb4df95c-3349-4692-a48f-031ba66af60b"
+      "_id": "e6a022e3-4ca3-4d06-84c4-9b426e9b5e9e"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "6ba74d1d-909c-4eab-81ad-5c0abf24253a"
+      "_id": "7487fbfa-a5e4-4d11-95ea-047f302c7da0"
     }
   ],
   "categories": [
     {
       "title": "Beaches",
-      "_id": "99a36748-adac-40ba-887d-ff3bc74453fc"
+      "userid": "2766ed3d-09ad-4c36-b932-f3b9e67e10f3",
+      "_id": "6986475d-606e-4b28-b157-a01b42808ec7"
     }
   ],
   "placemarks": [
@@ -34,33 +35,33 @@
       "category": "Beaches",
       "description": "Beach on Achill",
       "image": "N/A",
-      "Latitude": 53.97230361690282,
-      "Longitude": -10.073538005639282,
+      "latitude": 53.97230361690282,
+      "longitude": -10.073538005639282,
       "temperature": 10,
-      "_id": "b2be317b-62fe-4e86-a0d5-d01db8dc1c6b",
-      "categoryid": "99a36748-adac-40ba-887d-ff3bc74453fc"
+      "_id": "2391b00d-4aad-4650-97b7-ed280919aa30",
+      "categoryid": "6986475d-606e-4b28-b157-a01b42808ec7"
     },
     {
       "name": "Silver Strand",
       "category": "Beaches",
       "description": "Beach near Louisburgh",
       "image": "N/A",
-      "Latitude": 53.650577869684575,
-      "Longitude": -9.880188098504338,
+      "latitude": 53.650577869684575,
+      "longitude": -9.880188098504338,
       "temperature": 13,
-      "_id": "ebdb5cb0-e7a7-4bb8-a255-e5ef168885b6",
-      "categoryid": "99a36748-adac-40ba-887d-ff3bc74453fc"
+      "_id": "eabe615f-7d23-4e76-b698-85616f5c6db3",
+      "categoryid": "6986475d-606e-4b28-b157-a01b42808ec7"
     },
     {
       "name": "Old Head",
       "category": "Beaches",
       "description": "Beach near Killsallagh",
       "image": "N/A",
-      "Latitude": 53.77693196561296,
-      "Longitude": -9.770128386137225,
+      "latitude": 53.77693196561296,
+      "longitude": -9.770128386137225,
       "temperature": 14,
-      "_id": "faaae789-e66e-4afc-a78f-c38d441cc558",
-      "categoryid": "99a36748-adac-40ba-887d-ff3bc74453fc"
+      "_id": "b41bab66-2a96-451f-8d5d-a665fb6d50bc",
+      "categoryid": "6986475d-606e-4b28-b157-a01b42808ec7"
     }
   ]
 }

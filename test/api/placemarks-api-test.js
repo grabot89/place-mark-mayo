@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { placemarkService } from "./placemark-service.js";
-import { maggie, museums, testCategories, testPlacemarks, museum, beaches } from "../fixtures.js";
+import { maggie, maggieCredentials, museums, testCategories, testPlacemarks, museum, beaches } from "../fixtures.js";
 import { db } from "../../src/models/db.js";
 
 suite("Placemark API tests", () => {
@@ -10,11 +10,15 @@ suite("Placemark API tests", () => {
   let museumsList = null;
 
   setup(async () => {
-    db.init("mongo");
-    await placemarkService.deleteAllCategories();
-    await placemarkService.deleteAllUsers();
-    await placemarkService.deleteAllPlacemarks();
+    db.init("json");
+    placemarkService.clearAuth();
     user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggieCredentials);
+    await placemarkService.deleteAllCategories();
+    await placemarkService.deleteAllPlacemarks();
+    await placemarkService.deleteAllUsers();
+    user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     beaches.userid = user._id;
     beachList = await placemarkService.createCategory(beaches);
   });
@@ -35,7 +39,6 @@ suite("Placemark API tests", () => {
     }
     const returnedPlacemarks = await placemarkService.getAllPlacemarks();
     assert.equal(returnedPlacemarks.length, testPlacemarks.length);
-    console.log("Placemarks", returnedPlacemarks);
     for (let i = 0; i < returnedPlacemarks.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
       const placemark = await placemarkService.getPlacemark(returnedPlacemarks[i]._id);
