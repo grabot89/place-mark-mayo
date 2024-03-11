@@ -12,7 +12,7 @@ suite("Category API tests", () => {
   let user = null;
 
   setup(async () => {
-    db.init("json");
+    //db.init("json");
     placemarkService.clearAuth();
     user = await placemarkService.createUser(maggie);
     await placemarkService.authenticate(maggieCredentials);

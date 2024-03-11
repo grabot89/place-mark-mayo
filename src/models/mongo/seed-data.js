@@ -33,7 +33,6 @@ export const seedData = {
       name: "Country Life Museum",
       category: "Museums",
       description: "Museum of country life",
-      image: "N/A",
       "latitude": 53.88399130187888,
       "longitude": -9.207886178948524,
       "temperature": 11,

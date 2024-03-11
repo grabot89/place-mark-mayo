@@ -29,7 +29,6 @@ export const placemarkController = {
         name: request.payload.name,
         category: request.payload.category,
         description: Number(request.payload.description),
-        image: request.payload.image,
         latitude: Number(request.payload.latitude),
         longitude: Number(request.payload.longitude),
         temperature: Number(request.payload.temperature),

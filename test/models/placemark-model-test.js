@@ -8,7 +8,7 @@ suite("Placemark Model tests", () => {
   let beachList = null;
 
   setup(async () => {
-    await db.init("json");
+    db.init("json");
     await db.categoryStore.deleteAllCategories();
     await db.placemarkStore.deleteAllPlacemarks();
     beachList = await db.categoryStore.addCategory(beaches);

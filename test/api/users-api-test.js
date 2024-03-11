@@ -8,7 +8,7 @@ const users = new Array(testUsers.length);
 
 suite("User API tests", () => {
   setup(async () => {
-    db.init("json");
+    //db.init("json");
     placemarkService.clearAuth();
     await placemarkService.createUser(maggie);
     await placemarkService.authenticate(maggieCredentials);
@@ -30,12 +30,12 @@ suite("User API tests", () => {
 
   test("delete all userApi", async () => {
     let returnedUsers = await placemarkService.getAllUsers();
-    assert.equal(returnedUsers.length, 3);
+    assert.equal(returnedUsers.length, 4);
     await placemarkService.deleteAllUsers();
     await placemarkService.createUser(maggie);
     await placemarkService.authenticate(maggieCredentials);
     returnedUsers = await placemarkService.getAllUsers();
-    assert.equal(returnedUsers.length, 0);
+    assert.equal(returnedUsers.length, 1);
   });
 
   test("get a user", async () => {

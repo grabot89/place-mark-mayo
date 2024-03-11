@@ -5,28 +5,28 @@
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "23d0a84e-92fe-474f-b929-b2ece5c2ffe4"
+      "_id": "5b92963c-33fc-46ea-b626-ee041177c85c"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "e6a022e3-4ca3-4d06-84c4-9b426e9b5e9e"
+      "_id": "186094c6-d02a-49a0-8783-b61a0de27b0d"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "7487fbfa-a5e4-4d11-95ea-047f302c7da0"
+      "_id": "432523a9-58b9-4694-835c-8530d6a47b71"
     }
   ],
   "categories": [
     {
       "title": "Beaches",
-      "userid": "2766ed3d-09ad-4c36-b932-f3b9e67e10f3",
-      "_id": "6986475d-606e-4b28-b157-a01b42808ec7"
+      "userid": "65ef8dfd78cca0831cd0ccb6",
+      "_id": "bfe95d03-fc24-499a-8b43-1f92b5d228fb"
     }
   ],
   "placemarks": [
@@ -34,34 +34,31 @@
       "name": "Keel",
       "category": "Beaches",
       "description": "Beach on Achill",
-      "image": "N/A",
       "latitude": 53.97230361690282,
       "longitude": -10.073538005639282,
       "temperature": 10,
-      "_id": "2391b00d-4aad-4650-97b7-ed280919aa30",
-      "categoryid": "6986475d-606e-4b28-b157-a01b42808ec7"
+      "_id": "7d9553cd-70b3-4b62-a307-6a79de27bccf",
+      "categoryid": "bfe95d03-fc24-499a-8b43-1f92b5d228fb"
     },
     {
       "name": "Silver Strand",
       "category": "Beaches",
       "description": "Beach near Louisburgh",
-      "image": "N/A",
       "latitude": 53.650577869684575,
       "longitude": -9.880188098504338,
       "temperature": 13,
-      "_id": "eabe615f-7d23-4e76-b698-85616f5c6db3",
-      "categoryid": "6986475d-606e-4b28-b157-a01b42808ec7"
+      "_id": "8ccbd781-d946-4e17-a969-0a4af3b0212e",
+      "categoryid": "bfe95d03-fc24-499a-8b43-1f92b5d228fb"
     },
     {
       "name": "Old Head",
       "category": "Beaches",
       "description": "Beach near Killsallagh",
-      "image": "N/A",
       "latitude": 53.77693196561296,
       "longitude": -9.770128386137225,
       "temperature": 14,
-      "_id": "b41bab66-2a96-451f-8d5d-a665fb6d50bc",
-      "categoryid": "6986475d-606e-4b28-b157-a01b42808ec7"
+      "_id": "5f8f5242-80b1-4fbf-9713-5a838ce4dd7d",
+      "categoryid": "bfe95d03-fc24-499a-8b43-1f92b5d228fb"
     }
   ]
 }

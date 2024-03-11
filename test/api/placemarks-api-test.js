@@ -10,7 +10,7 @@ suite("Placemark API tests", () => {
   let museumsList = null;
 
   setup(async () => {
-    db.init("json");
+    //db.init("json");
     placemarkService.clearAuth();
     user = await placemarkService.createUser(maggie);
     await placemarkService.authenticate(maggieCredentials);
@@ -21,13 +21,13 @@ suite("Placemark API tests", () => {
     await placemarkService.authenticate(maggieCredentials);
     beaches.userid = user._id;
     beachList = await placemarkService.createCategory(beaches);
+    museums.userid = user._id;
+    museumsList = await placemarkService.createCategory(museums);
   });
 
   teardown(async () => {});
 
   test("create placemark", async () => {
-    museums.userid = user._id;
-    museumsList = await placemarkService.createCategory(museums);
     const returnedPlacemark = await placemarkService.createPlacemark(museumsList._id, museum);
     assertSubset(museum, returnedPlacemark);
   });
