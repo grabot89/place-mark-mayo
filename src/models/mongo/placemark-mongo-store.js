@@ -44,7 +44,6 @@ export const placemarkMongoStore = {
     placemarkDoc.name = updatedPlacemark.name;
     placemarkDoc.category = updatedPlacemark.category;
     placemarkDoc.description = updatedPlacemark.description;
-    placemarkDoc.image = updatedPlacemark.image;
     placemarkDoc.latitude = updatedPlacemark.latitude;
     placemarkDoc.longitude = updatedPlacemark.longitude;
     placemarkDoc.temperature = updatedPlacemark.temperature;

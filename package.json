@@ -8,7 +8,9 @@
     "start": "node src/server.js",
     "dev": "./node_modules/.bin/nodemon src/server.js",
     "lint": "./node_modules/.bin/eslint . --ext .js",
-    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**/*.js -exit"
+    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**/*.js -exit",
+    "testmodels": "./node_modules/mocha/bin/mocha --ui tdd test/models/**/*.js",
+    "testapi": "./node_modules/mocha/bin/mocha --ui tdd test/api/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -30,10 +32,15 @@
     "@hapi/hapi": "^21.3.2",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
+    "cloudinary": "^2.0.3",
     "dotenv": "^16.4.1",
     "handlebars": "^4.7.8",
+    "hapi-auth-jwt2": "^10.5.1",
+    "hapi-swagger": "^17.2.1",
     "joi": "^17.12.0",
+    "jsonwebtoken": "^9.0.2",
     "lowdb": "^7.0.1",
+    "mais-mongoose-seeder": "^1.0.7",
     "mongoose": "^8.1.1",
     "uuid": "^9.0.1"
   },
@@ -47,5 +54,8 @@
     "mocha": "^10.2.0",
     "nodemon": "^3.0.3",
     "prettier": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }

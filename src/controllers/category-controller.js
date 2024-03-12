@@ -1,5 +1,7 @@
 import { PlacemarkSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+import { imageStore } from "../models/image-store.js";
+
 
 export const categoryController = {
   index: {
@@ -27,13 +29,10 @@ export const categoryController = {
         name: request.payload.name,
         category: request.payload.category,
         description: request.payload.description,
-        image: request.payload.image,
         latitude: Number(request.payload.latitude),
         longitude: Number(request.payload.longitude),
         temperature: Number(request.payload.temperature),
       };
-      console.log("New Placemark", newPlacemark);
-      console.log("New Category", category);
       await db.placemarkStore.addPlacemark(category._id, newPlacemark);
       return h.redirect(`/category/${category._id}`);
     },
@@ -44,6 +43,30 @@ export const categoryController = {
       const category = await db.categoryStore.getCategoryById(request.params.id);
       await db.placemarkStore.deletePlacemark(request.params.placemarkid);
       return h.redirect(`/category/${category._id}`);
+    },
+  },
+
+  uploadImage: {
+    handler: async function (request, h) {
+      try {
+        const category = await db.categoryStore.getCategoryById(request.params.id);
+        const file = request.payload.imagefile;
+        if (Object.keys(file).length > 0) {
+          const url = await imageStore.uploadImage(request.payload.imagefile);
+          category.img = url;
+          await db.categoryStore.updateCategory(category);
+        }
+        return h.redirect(`/category/${category._id}`);
+      } catch (err) {
+        console.log(err);
+        return h.redirect(`/category/${category._id}`);
+      }
+    },
+    payload: {
+      multipart: true,
+      output: "data",
+      maxBytes: 209715200,
+      parse: true,
     },
   },
 };
